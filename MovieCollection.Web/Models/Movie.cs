@@ -7,11 +7,11 @@ public class Movie
 {
     public int Id { get; set; }
     [Required]
-    public string Title { get; set; }
+    public string Title { get; set; } = null!;
     [Required]
-    public string Director { get; set; }
+    public string Director { get; set; } = null!;
     [Required(ErrorMessage = "Enter a valid year")]
-    public int Year { get; set; }
-    [Required]
-    public string ExternalUrl { get; set; }
+    public int Year { get; set; } 
+
+    public string? ExternalUrl { get; set; }
 }

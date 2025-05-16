@@ -3,11 +3,12 @@
 @using MovieCollection.Web.Models
 @model Movie
 <!DOCTYPE html>
-<html>
+<html lang="en" data-theme="dark">
 <head>
+    <link rel="stylesheet" href="https://unpkg.com/@@picocss/pico@@latest/css/pico.classless.min.css">
     <title>Movie Details</title>
 </head>
-<body>
+<body style="margin: 50px;">
     <strong><a href="/">Home</a></strong>
     <h2>Movie Details</h2>
     <h4>ID: @Model.Id</h4>

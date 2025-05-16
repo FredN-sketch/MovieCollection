@@ -3,13 +3,14 @@
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @model Movie[]
 <!DOCTYPE html>
-    <html>
-    <head>
-        <title>My Movie Collection on DVD and BluRay</title>
-    </head>
-    <body>
-        <h2>My Movie Collection on DVD and BluRay</h2>
-        <ul>
+<html lang="en" data-theme="dark">
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/@@picocss/pico@@latest/css/pico.classless.min.css">
+    <title>My Movie Collection on DVD and BluRay</title>
+</head>
+<body style="margin: 50px;">
+    <h2>My Movie Collection on DVD and BluRay</h2>
+    <ul>
 
         @foreach (Movie movie in Model)
         {
@@ -17,11 +18,11 @@
                 <a asp-action="Details" asp-route-id="@movie.Id">
                     @movie.Title
                 </a>
-                
+
             </li>
         }
-    
-        </ul>
-        <h2><a href="/Create">Add Movie</a></h2>
-    </body>
-    </html>
+
+    </ul>
+    <h2><a href="/Create">Add Movie</a></h2>
+</body>
+</html>
