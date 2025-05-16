@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MovieCollection.Web.Models;
 using MovieCollection.Web.Services;
 
 namespace MovieCollection.Web.Controllers
@@ -11,6 +12,21 @@ namespace MovieCollection.Web.Controllers
         {
             var model = movieService.GetAll();
             return View(model);
+        }
+        [HttpGet("Create")]
+        public IActionResult Create() 
+        { 
+            return View();
+        }
+        [HttpPost("Create")]
+        public IActionResult Create(Movie movie) 
+        {
+            if (!ModelState.IsValid) 
+            {
+                return View();
+            }
+            movieService.Add(movie);
+            return RedirectToAction(nameof(Index));
         }
         [HttpGet("details/{id}")]
         public IActionResult Details(int id) 

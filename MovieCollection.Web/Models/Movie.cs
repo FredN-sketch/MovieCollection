@@ -12,5 +12,6 @@ public class Movie
     public string Director { get; set; }
     [Required]
     public int Year { get; set; }
+    [Required]
     public string ExternalUrl { get; set; }
 }
