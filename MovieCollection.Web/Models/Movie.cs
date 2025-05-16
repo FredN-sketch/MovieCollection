@@ -10,7 +10,7 @@ public class Movie
     public string Title { get; set; }
     [Required]
     public string Director { get; set; }
-    [Required]
+    [Required(ErrorMessage = "Enter a valid year")]
     public int Year { get; set; }
     [Required]
     public string ExternalUrl { get; set; }

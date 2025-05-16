@@ -1,5 +1,6 @@
 ﻿@using MovieCollection.Web.Controllers
 @using MovieCollection.Web.Models
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @model Movie[]
 <!DOCTYPE html>
     <html>
@@ -12,7 +13,12 @@
 
         @foreach (Movie movie in Model)
         {
-            <li>@movie.Title</li>
+            <li>
+                <a asp-action="Details" asp-route-id="@movie.Id">
+                    @movie.Title
+                </a>
+                
+            </li>
         }
     
         </ul>
