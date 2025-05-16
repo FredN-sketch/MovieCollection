@@ -1,0 +1,21 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using MovieCollection.Web.Controllers
+@using MovieCollection.Web.Models
+@model Movie[]
+<!DOCTYPE html>
+    <html>
+    <head>
+        <title>My Movie Collection on DVD and BluRay</title>
+    </head>
+    <body>
+        <h2>My Movie Collection on DVD and BluRay</h2>
+        <ul>
+
+        @foreach (Movie movie in Model)
+        {
+            <li>@movie.Title</li>
+        }
+    
+        </ul>
+    </body>
+    </html>
