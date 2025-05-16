@@ -1,0 +1,19 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using MovieCollection.Web.Controllers
+@using MovieCollection.Web.Models
+@model Movie
+<!DOCTYPE html>
+    <html>
+    <head>
+        <title>Movie Details</title>
+    </head>
+    <body>
+        <h2>Movie Details</h2>
+        <h4>ID: @Model.Id</h4>
+        <h4>Title: @Model.Title</h4>
+        <h4>Director: @Model.Director</h4>
+        <h4>Year: @Model.Year</h4>
+        <h4><a target="_blank" rel="noopener noreferrer" href="@Model.ExternalUrl">Read more</a></h4>
+    
+    </body>
+    </html>

@@ -12,5 +12,11 @@ namespace MovieCollection.Web.Controllers
             var model = movieService.GetAll();
             return View(model);
         }
+        [HttpGet("details/{id}")]
+        public IActionResult Details(int id) 
+        {
+            var model = movieService.GetById(id);
+            return View(model);        
+        }
     }
 }
