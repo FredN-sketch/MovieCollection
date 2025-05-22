@@ -1,12 +1,7 @@
-﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
-@model MovieCollection.Web.Models.Movie
-<!DOCTYPE html>
-<html lang="en" data-theme="dark">
-<head>
-    <link rel="stylesheet" href="https://unpkg.com/@@picocss/pico@@latest/css/pico.classless.min.css">
-    <title>Add Movie</title>
-</head>
-<body style ="margin: 50px;">
+﻿@model MovieCollection.Web.Models.Movie
+@{
+    ViewBag.Title = "My Movie Collection";
+}
     <h4>Add Movie</h4>
     <form asp-controller="Movies" asp-action="Create">
         <label asp-for="Title"></label>
@@ -29,5 +24,4 @@
     </form>
     <div asp-validation-summary="All"></div>
 
-</body>
-</html>
+

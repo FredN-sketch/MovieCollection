@@ -4,11 +4,9 @@ namespace MovieCollection.Web.Models;
 
 public class Movie
 {
-    public int Id { get; set; }
-    //[Required]
+    public int Id { get; set; }   
     [Required(ErrorMessage = "Enter a title")]
     public string Title { get; set; } = null!;
-    // [Required]
     [Required(ErrorMessage = "Enter a director")]
     public string Director { get; set; } = null!;
     [Required(ErrorMessage = "Enter a year")]
