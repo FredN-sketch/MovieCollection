@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MovieCollection.Web.Models;
 using MovieCollection.Web.Services;
+using MovieCollection.Web.Views.Movies;
+
 
 namespace MovieCollection.Web.Controllers
 {
@@ -11,7 +13,17 @@ namespace MovieCollection.Web.Controllers
         public IActionResult Index()
         {
             var model = movieService.GetAll();
-            return View(model);
+            var viewModel = new IndexVM()
+            {
+                MovieVMs = model
+               .Select(e => new IndexVM.MovieVM()
+               {
+                   Id = e.Id,
+                   Title = e.Title,                  
+               })
+               .ToArray()
+            };
+            return View(viewModel);
         }
         [HttpGet("Create")]
         public IActionResult Create() 

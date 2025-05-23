@@ -1,20 +1,15 @@
-﻿@model Movie[]
+﻿@model IndexVM
 @{
     ViewBag.Title = "My Movie Collection";
 }
 <h2>@ViewBag.Title</h2>
     <ul>
-
-        @foreach (Movie movie in Model)
+        @foreach (var movie in Model.MovieVMs)
         {
             <li>
-                <a asp-action="Details" asp-route-id="@movie.Id">
-                    @movie.Title
-                </a>
-
+                <a asp-action="Details" asp-route-id="@movie.Id">@movie.Title</a>
             </li>
         }
-
     </ul>
     <h2><a href="/Create">Add Movie</a></h2>
 
