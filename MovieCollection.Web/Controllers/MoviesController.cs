@@ -31,12 +31,20 @@ namespace MovieCollection.Web.Controllers
             return View();
         }
         [HttpPost("Create")]
-        public IActionResult Create(Movie movie) 
+        public IActionResult Create(CreateVM viewModel) 
         {
             if (!ModelState.IsValid) 
             {
                 return View();
             }
+            Movie movie = new() 
+            { 
+                Title = viewModel.Title,
+                Director = viewModel.Director,
+                Year = viewModel.Year,
+                ExternalUrl = viewModel.ExternalUrl,
+            };
+
             movieService.Add(movie);
             return RedirectToAction(nameof(Index));
         }
@@ -44,7 +52,16 @@ namespace MovieCollection.Web.Controllers
         public IActionResult Details(int id) 
         {
             var model = movieService.GetById(id);
-            return View(model);        
+            DetailsVM viewModel = new()
+            {
+                Id = model.Id,
+                Title = model.Title,
+                Director = model.Director,
+                Year = model.Year,
+                ExternalUrl = model.ExternalUrl,
+            };
+
+            return View(viewModel);        
         }
     }
 }
