@@ -4,9 +4,9 @@ using MovieCollection.Web.Services;
 
 namespace MovieCollection.Web.Controllers
 {
-    public class MoviesController : Controller
+    public class MoviesController(MovieService movieService) : Controller
     {
-        static MovieService movieService = new MovieService();
+      //  static MovieService movieService = new MovieService();
         [HttpGet("")]
         public IActionResult Index()
         {
