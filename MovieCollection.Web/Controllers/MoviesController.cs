@@ -7,8 +7,7 @@ using MovieCollection.Web.Views.Movies;
 namespace MovieCollection.Web.Controllers
 {
     public class MoviesController(MovieService movieService) : Controller
-    {
-      //  static MovieService movieService = new MovieService();
+    {      
         [HttpGet("")]
         public IActionResult Index()
         {
